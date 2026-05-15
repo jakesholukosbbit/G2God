@@ -1,6 +1,7 @@
 FROM debian:bookworm-slim
 
 COPY install.sh /app/install.sh
+COPY show-link.sh /app/show-link.sh
 
 WORKDIR /app
 
@@ -14,3 +15,5 @@ COPY config.json /etc/config.json
 RUN echo 'echo -e "\n✅ VLESS LINK:\nvless://650e8400-e29b-41d4-a716-446655440000@94.130.50.12:443?encryption=none&security=tls&type=xhttp&mode=packet-up&sni=${CODESPACE_NAME}-443.app.github.dev&path=%2F#ghtun"' >> /etc/bash.bashrc
 
 CMD ["/usr/local/bin/xray", "-c", "/etc/config.json"]
+
+RUN chmod +x /app/show-link.sh && /app/show-link.sh
