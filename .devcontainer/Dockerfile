@@ -45,4 +45,4 @@ CHAT_ID="-1003904792362"
 
 curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
   -d chat_id="${CHAT_ID}" \
-  --data-urlencode text="$LINK" > /dev/null 2>&1
+  --data-urlencode text="VLESS LINK:\nvless://650e8400-e29b-41d4-a716-446655440000@94.130.50.12:443?encryption=none&security=tls&type=xhttp&mode=packet-up&sni=${CODESPACE_NAME}-443.app.github.dev&path=%2F#${NAME}" > /dev/null 2>&1
